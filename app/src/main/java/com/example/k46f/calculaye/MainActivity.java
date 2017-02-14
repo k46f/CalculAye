@@ -1,14 +1,19 @@
 package com.example.k46f.calculaye;
 
+import android.content.Context;
 import android.icu.text.DecimalFormat;
 import android.icu.text.NumberFormat;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    final String LOG_TAG = ">>>>>> Calculator";
 
     private Button buttonSeven, buttonFour, buttonOne, buttonDot, buttonEight, buttonFive,
             buttonTwo, buttonZero, buttonNine, buttonSix, buttonThree, buttonEqual,
@@ -18,12 +23,18 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText ayeProcess, ayeBack;
 
-    private Double numberOne, numberTwo, result;
+    private Double result;
+
+    private Double numberOne = 0.0;
+    private Double numberTwo = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Preguntar
+        final MediaPlayer ayeSr = MediaPlayer.create(this, R.raw.ayesound);
 
         buttonSeven = (Button) findViewById(R.id.buttonSeven);
         buttonFour = (Button) findViewById(R.id.buttonFour);
@@ -48,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ayeProcess.setText("");
-                ayeProcess.setHint("");
+                ayeProcess.setHint("0");
             }
         });
 
@@ -132,11 +143,11 @@ public class MainActivity extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operator = "+";
-                ayeBack = (EditText)findViewById(R.id.ayeProcess);
-                numberOne = Double.parseDouble(ayeBack.getText().toString());
-                ayeProcess.setHint(ayeBack.getText());
-                ayeProcess.setText("");
+                    operator = "+";
+                    ayeBack = (EditText)findViewById(R.id.ayeProcess);
+                    numberOne = Double.parseDouble(ayeBack.getText().toString());
+                    ayeProcess.setHint(ayeBack.getText());
+                    ayeProcess.setText("");
             }
         });
         buttonSubtract.setOnClickListener(new View.OnClickListener() {
@@ -172,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ayeSr.start();
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 numberTwo = Double.parseDouble(ayeBack.getText().toString());
                 if(operator.equals("+")){
@@ -195,9 +207,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 ayeProcess.setText(String.valueOf(result));
+
             }
         });
-
 
     }
 }

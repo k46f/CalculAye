@@ -12,15 +12,13 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonSeven, buttonFour, buttonOne, buttonDot, buttonEight, buttonFive,
             buttonTwo, buttonZero, buttonNine, buttonSix, buttonThree, buttonEqual,
-            buttonAdd, buttonSubtract, buttonMultiply, buttonDivision;
+            buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear;
 
     private String operator;
 
     private EditText ayeProcess, ayeBack;
 
     private Double numberOne, numberTwo, result;
-
-    private NumberFormat nf = new DecimalFormat("##.###");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +41,16 @@ public class MainActivity extends AppCompatActivity {
         buttonSubtract = (Button) findViewById(R.id.buttonSubtract);
         buttonMultiply = (Button) findViewById(R.id.buttonMultiply);
         buttonDivision = (Button) findViewById(R.id.buttonDivision);
+        buttonClear = (Button) findViewById(R.id.buttonClear);
         ayeProcess = (EditText) findViewById(R.id.ayeProcess);
+
+        buttonClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ayeProcess.setText("");
+                ayeProcess.setHint("");
+            }
+        });
 
         buttonSeven.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Double numberOne = 0.0;
     private Double numberTwo = 0.0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "7");
+                ayeProcess.setHint("7");
             }
         });
         buttonFour.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "4");
+                ayeProcess.setHint("4");
             }
         });
         buttonOne.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "1");
+                ayeProcess.setHint("1");
             }
         });
         buttonEight.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "8");
+                ayeProcess.setHint("8");
             }
         });
         buttonFive.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "5");
+                ayeProcess.setHint("5");
             }
         });
         buttonTwo.setOnClickListener(new View.OnClickListener() {
@@ -115,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "2");
+                ayeProcess.setHint("2");
             }
         });
         buttonZero.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "0");
+                ayeProcess.setHint("0");
             }
         });
         buttonNine.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "9");
+                ayeProcess.setHint("9");
             }
         });
         buttonSix.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "6");
+                ayeProcess.setHint("6");
             }
         });
         buttonThree.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 ayeProcess.setText(ayeBack.getText().toString() + "3");
+                ayeProcess.setHint("3");
             }
         });
         buttonDot.setOnClickListener(new View.OnClickListener() {
@@ -155,99 +165,168 @@ public class MainActivity extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    Log.i(LOG_TAG, "Number is empty");
+                }else{
                     operator = "+";
                     ayeBack = (EditText)findViewById(R.id.ayeProcess);
                     numberOne = Double.parseDouble(ayeBack.getText().toString());
                     ayeProcess.setHint(ayeBack.getText());
                     ayeProcess.setText("");
+                }
             }
         });
         buttonSubtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    Log.i(LOG_TAG, "Number is empty");
+                }else{
                 operator = "-";
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 numberOne = Double.parseDouble(ayeBack.getText().toString());
                 ayeProcess.setHint(ayeBack.getText());
                 ayeProcess.setText("");
+                }
             }
         });
         buttonMultiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    Log.i(LOG_TAG, "Number is empty");
+                }else{
                 operator = "x";
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 numberOne = Double.parseDouble(ayeBack.getText().toString());
                 ayeProcess.setHint(ayeBack.getText());
                 ayeProcess.setText("");
+                }
             }
         });
         buttonDivision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    Log.i(LOG_TAG, "Number is empty");
+                }else{
                 operator = "/";
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 numberOne = Double.parseDouble(ayeBack.getText().toString());
                 ayeProcess.setHint(ayeBack.getText());
                 ayeProcess.setText("");
+                }
             }
         });
         buttonMod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                if (ayeProcess.getHint().equals("0")){
+                    Log.i(LOG_TAG, "Number is empty");
+                }else{
                 operator ="mod";
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 numberOne = Double.parseDouble(ayeBack.getText().toString());
                 ayeProcess.setHint(ayeBack.getText());
                 ayeProcess.setText("");
+                }
             }
         });
         buttonRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    ayeProcess.setText("0");
+                    result = Double.parseDouble(ayeProcess.getText().toString());
+                    result = Math.sqrt(result);
+                }else{
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.sqrt(result);
                 ayeProcess.setText(String.valueOf(result));
+                }
             }
         });
         buttonSin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    ayeProcess.setText("0");
+                    result = Double.parseDouble(ayeProcess.getText().toString());
+                    result = Math.sin(result);
+                    ayeProcess.setText(String.valueOf(result));
+                }else{
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.sin(result);
                 ayeProcess.setText(String.valueOf(result));
+                }
             }
         });
         buttonCos.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    ayeProcess.setText("0");
+                    result = Double.parseDouble(ayeProcess.getText().toString());
+                    result = Math.cos(result);
+                    ayeProcess.setText(String.valueOf(result));
+                }else{
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.cos(result);
                 ayeProcess.setText(String.valueOf(result));
+                }
             }
         });
         buttonTan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    ayeProcess.setText("0");
+                    result = Double.parseDouble(ayeProcess.getText().toString());
+                    result = Math.tan(result);
+                    ayeProcess.setText(String.valueOf(result));
+                }else{
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.tan(result);
                 ayeProcess.setText(String.valueOf(result));
+                }
             }
         });
         buttonFact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    ayeProcess.setText("0");
+                    result = Double.parseDouble(ayeProcess.getText().toString());
+                    for (Double i =1.0; i <= result; i++) {
+                        fact *=i;
+                    }
+                    ayeProcess.setText(String.valueOf(fact));
+                    fact = 1.0;
+                }else{
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 for (Double i =1.0; i <= result; i++) {
                     fact *=i;
                 }
                 ayeProcess.setText(String.valueOf(fact));
                 fact = 1.0;
+                }
             }
         });
         buttonPercentage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    ayeProcess.setText("0");
+                    if (numberOne.equals(0.0)) {
+                        percentage = Double.parseDouble(ayeProcess.getText().toString());
+                        result = percentage / 100;
+                        ayeProcess.setText(String.valueOf(result));
+                    } else {
+                        percentage = Double.parseDouble(ayeProcess.getText().toString());
+                        result = (percentage / 100) * numberOne;
+                        ayeProcess.setText(String.valueOf(result));
+                    }
+                }else{
                 if (numberOne.equals(0.0)) {
                     percentage = Double.parseDouble(ayeProcess.getText().toString());
                     result = percentage / 100;
@@ -257,19 +336,28 @@ public class MainActivity extends AppCompatActivity {
                     result = (percentage / 100) * numberOne;
                     ayeProcess.setText(String.valueOf(result));
                 }
-            }
+                }
+                            }
         });
         buttonLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    ayeProcess.setText("0");
+                    result = Double.parseDouble(ayeProcess.getText().toString());
+                    result = Math.log(result);
+                    ayeProcess.setText(String.valueOf(result));
+                }else{
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.log(result);
                 ayeProcess.setText(String.valueOf(result));
+                }
             }
         });
         buttonRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ayeProcess.setText("");
                 for(int i = 1; i<=33; i++) {
                     ayeBack = (EditText) findViewById(R.id.ayeProcess);
                     ayeProcess.setText(ayeBack.getText().toString() + ((int) (Math.random() * 9 + 0)));
@@ -279,6 +367,9 @@ public class MainActivity extends AppCompatActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ayeProcess.getHint().equals("0")){
+                    Log.i(LOG_TAG, "Number is empty");
+                }else{
                 ayeSr.start();
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 numberTwo = Double.parseDouble(ayeBack.getText().toString());
@@ -308,6 +399,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ayeProcess.setText(String.valueOf(result));
                 numberOne = 0.0;
+                }
 
             }
         });

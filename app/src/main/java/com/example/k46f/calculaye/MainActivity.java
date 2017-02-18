@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonSeven, buttonFour, buttonOne, buttonDot, buttonEight, buttonFive,
             buttonTwo, buttonZero, buttonNine, buttonSix, buttonThree, buttonEqual,
             buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear, buttonRoot,
-            buttonSin, buttonCos, buttonTan, buttonFact;
+            buttonSin, buttonCos, buttonTan, buttonFact, buttonMod;
 
     private String operator;
 
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCos = (Button) findViewById(R.id.buttonCos);
         buttonTan = (Button) findViewById(R.id.buttonTan);
         buttonFact = (Button) findViewById(R.id.buttonFact);
+        buttonMod = (Button) findViewById(R.id.buttonMod);
         ayeProcess = (EditText) findViewById(R.id.ayeProcess);
 
         buttonClear.setOnClickListener(new View.OnClickListener() {
@@ -189,6 +190,16 @@ public class MainActivity extends AppCompatActivity {
                 ayeProcess.setText("");
             }
         });
+        buttonMod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                operator ="mod";
+                ayeBack = (EditText)findViewById(R.id.ayeProcess);
+                numberOne = Double.parseDouble(ayeBack.getText().toString());
+                ayeProcess.setHint(ayeBack.getText());
+                ayeProcess.setText("");
+            }
+        });
         buttonRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -248,6 +259,10 @@ public class MainActivity extends AppCompatActivity {
                 if(operator.equals("x")){
                     ayeProcess.setText("");
                     result = numberOne * numberTwo;
+                }
+                if (operator.equals("mod")){
+                    ayeProcess.setText("");
+                    result = numberOne % numberTwo;
                 }
                 if(operator.equals("/")){
                     ayeProcess.setText("");

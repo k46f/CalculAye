@@ -262,5 +262,15 @@
         android:layout_below="@id/buttonRoot"
         android:layout_toRightOf="@id/buttonTan"
         />
+    <Button
+        android:id="@+id/buttonMod"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mod"
+        android:textSize="20sp"
+        android:layout_below="@id/buttonSin"
+        android:layout_toRightOf="@id/buttonFact"
+        />
 
 </RelativeLayout>

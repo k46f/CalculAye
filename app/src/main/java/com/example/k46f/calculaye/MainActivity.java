@@ -18,20 +18,16 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonSeven, buttonFour, buttonOne, buttonDot, buttonEight, buttonFive,
             buttonTwo, buttonZero, buttonNine, buttonSix, buttonThree, buttonEqual,
             buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear, buttonRoot,
-            buttonSin, buttonCos, buttonTan, buttonFact, buttonMod, buttonPercentage, buttonRandom;
+            buttonSin, buttonCos, buttonTan, buttonFact, buttonMod, buttonPercentage, buttonRandom,
+            buttonLog;
 
     private String operator;
-
     private EditText ayeProcess, ayeBack;
-
     private Double result;
-
     private Double numberOne = 0.0;
     private Double numberTwo = 0.0;
-
     private Double fact = 1.0;
     private Double percentage = 0.0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
         buttonMod = (Button) findViewById(R.id.buttonMod);
         buttonPercentage = (Button) findViewById(R.id.buttonPercentage);
         buttonRandom = (Button) findViewById(R.id.buttonRandom);
+        buttonLog = (Button) findViewById(R.id.buttonLog);
         ayeProcess = (EditText) findViewById(R.id.ayeProcess);
+
 
         buttonClear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -259,6 +257,14 @@ public class MainActivity extends AppCompatActivity {
                     result = (percentage / 100) * numberOne;
                     ayeProcess.setText(String.valueOf(result));
                 }
+            }
+        });
+        buttonLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result = Double.parseDouble(ayeProcess.getText().toString());
+                result = Math.log(result);
+                ayeProcess.setText(String.valueOf(result));
             }
         });
         buttonRandom.setOnClickListener(new View.OnClickListener() {

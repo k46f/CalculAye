@@ -17,14 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonSeven, buttonFour, buttonOne, buttonDot, buttonEight, buttonFive,
             buttonTwo, buttonZero, buttonNine, buttonSix, buttonThree, buttonEqual,
-            buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear, buttonRoot;
+            buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear, buttonRoot,
+            buttonSin;
 
     private String operator;
 
     private EditText ayeProcess, ayeBack;
 
     private Double result;
-    private Double resultSquare;
 
     private Double numberOne = 0.0;
     private Double numberTwo = 0.0;
@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDivision = (Button) findViewById(R.id.buttonDivision);
         buttonClear = (Button) findViewById(R.id.buttonClear);
         buttonRoot = (Button) findViewById(R.id.buttonRoot);
+        buttonSin = (Button) findViewById(R.id.buttonSin);
         ayeProcess = (EditText) findViewById(R.id.ayeProcess);
 
         buttonClear.setOnClickListener(new View.OnClickListener() {
@@ -186,9 +187,17 @@ public class MainActivity extends AppCompatActivity {
         buttonRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultSquare = Double.parseDouble(ayeProcess.getText().toString());
-                resultSquare = Math.sqrt(resultSquare);
-                ayeProcess.setText(String.valueOf(resultSquare));
+                result = Double.parseDouble(ayeProcess.getText().toString());
+                result = Math.sqrt(result);
+                ayeProcess.setText(String.valueOf(result));
+            }
+        });
+        buttonSin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result = Double.parseDouble(ayeProcess.getText().toString());
+                result = Math.sin(result);
+                ayeProcess.setText(String.valueOf(result));
             }
         });
         buttonEqual.setOnClickListener(new View.OnClickListener() {

@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
                     if(numberTwo != 0){
                         result = numberOne / numberTwo;
                     }else {
-                        ayeProcess.setText("Can not divide by zero");
+                        ayeProcess.setText("Infinite");
                     }
                 }
                 ayeProcess.setText(String.valueOf(result));

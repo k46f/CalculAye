@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonSeven, buttonFour, buttonOne, buttonDot, buttonEight, buttonFive,
             buttonTwo, buttonZero, buttonNine, buttonSix, buttonThree, buttonEqual,
             buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear, buttonRoot,
-            buttonSin, buttonCos, buttonTan;
+            buttonSin, buttonCos, buttonTan, buttonFact;
 
     private String operator;
 
@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Double numberOne = 0.0;
     private Double numberTwo = 0.0;
+
+    private Double fact =1.0;
 
 
     @Override
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSin = (Button) findViewById(R.id.buttonSin);
         buttonCos = (Button) findViewById(R.id.buttonCos);
         buttonTan = (Button) findViewById(R.id.buttonTan);
+        buttonFact = (Button) findViewById(R.id.buttonFact);
         ayeProcess = (EditText) findViewById(R.id.ayeProcess);
 
         buttonClear.setOnClickListener(new View.OnClickListener() {
@@ -216,6 +219,16 @@ public class MainActivity extends AppCompatActivity {
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.tan(result);
                 ayeProcess.setText(String.valueOf(result));
+            }
+        });
+        buttonFact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result = Double.parseDouble(ayeProcess.getText().toString());
+                for (Double i =1.0; i <= result; i++) {
+                    fact *=i;
+                }
+                ayeProcess.setText(String.valueOf(fact));
             }
         });
         buttonEqual.setOnClickListener(new View.OnClickListener() {

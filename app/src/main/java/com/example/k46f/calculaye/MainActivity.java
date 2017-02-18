@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonSeven, buttonFour, buttonOne, buttonDot, buttonEight, buttonFive,
             buttonTwo, buttonZero, buttonNine, buttonSix, buttonThree, buttonEqual,
             buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear, buttonRoot,
-            buttonSin, buttonCos, buttonTan, buttonFact, buttonMod;
+            buttonSin, buttonCos, buttonTan, buttonFact, buttonMod, buttonPercentage;
 
     private String operator;
 
@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private Double numberOne = 0.0;
     private Double numberTwo = 0.0;
 
-    private Double fact =1.0;
+    private Double fact = 1.0;
+    private Double percentage = 0.0;
 
 
     @Override
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         buttonTan = (Button) findViewById(R.id.buttonTan);
         buttonFact = (Button) findViewById(R.id.buttonFact);
         buttonMod = (Button) findViewById(R.id.buttonMod);
+        buttonPercentage = (Button) findViewById(R.id.buttonPercentage);
         ayeProcess = (EditText) findViewById(R.id.ayeProcess);
 
         buttonClear.setOnClickListener(new View.OnClickListener() {
@@ -204,7 +206,6 @@ public class MainActivity extends AppCompatActivity {
         buttonRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.sqrt(result);
                 ayeProcess.setText(String.valueOf(result));
@@ -213,7 +214,6 @@ public class MainActivity extends AppCompatActivity {
         buttonSin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.sin(result);
                 ayeProcess.setText(String.valueOf(result));
@@ -222,7 +222,6 @@ public class MainActivity extends AppCompatActivity {
         buttonCos.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.cos(result);
                 ayeProcess.setText(String.valueOf(result));
@@ -231,7 +230,6 @@ public class MainActivity extends AppCompatActivity {
         buttonTan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.tan(result);
                 ayeProcess.setText(String.valueOf(result));
@@ -240,13 +238,26 @@ public class MainActivity extends AppCompatActivity {
         buttonFact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 for (Double i =1.0; i <= result; i++) {
                     fact *=i;
                 }
                 ayeProcess.setText(String.valueOf(fact));
                 fact = 1.0;
+            }
+        });
+        buttonPercentage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (numberOne.equals(0.0)) {
+                    percentage = Double.parseDouble(ayeProcess.getText().toString());
+                    result = percentage / 100;
+                    ayeProcess.setText(String.valueOf(result));
+                } else {
+                    percentage = Double.parseDouble(ayeProcess.getText().toString());
+                    result = (percentage / 100) * numberOne;
+                    ayeProcess.setText(String.valueOf(result));
+                }
             }
         });
         buttonEqual.setOnClickListener(new View.OnClickListener() {
@@ -280,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 ayeProcess.setText(String.valueOf(result));
-                numberTwo = 0.0;
+                numberOne = 0.0;
 
             }
         });

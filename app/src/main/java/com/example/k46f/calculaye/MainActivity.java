@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonSeven, buttonFour, buttonOne, buttonDot, buttonEight, buttonFive,
             buttonTwo, buttonZero, buttonNine, buttonSix, buttonThree, buttonEqual,
             buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear, buttonRoot,
-            buttonSin, buttonCos, buttonTan, buttonFact, buttonMod, buttonPercentage;
+            buttonSin, buttonCos, buttonTan, buttonFact, buttonMod, buttonPercentage, buttonRandom;
 
     private String operator;
 
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         buttonFact = (Button) findViewById(R.id.buttonFact);
         buttonMod = (Button) findViewById(R.id.buttonMod);
         buttonPercentage = (Button) findViewById(R.id.buttonPercentage);
+        buttonRandom = (Button) findViewById(R.id.buttonRandom);
         ayeProcess = (EditText) findViewById(R.id.ayeProcess);
 
         buttonClear.setOnClickListener(new View.OnClickListener() {
@@ -257,6 +258,15 @@ public class MainActivity extends AppCompatActivity {
                     percentage = Double.parseDouble(ayeProcess.getText().toString());
                     result = (percentage / 100) * numberOne;
                     ayeProcess.setText(String.valueOf(result));
+                }
+            }
+        });
+        buttonRandom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for(int i = 1; i<=33; i++) {
+                    ayeBack = (EditText) findViewById(R.id.ayeProcess);
+                    ayeProcess.setText(ayeBack.getText().toString() + ((int) (Math.random() * 9 + 0)));
                 }
             }
         });

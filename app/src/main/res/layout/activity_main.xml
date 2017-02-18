@@ -179,7 +179,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:layout_below="@id/buttonAdd"
         android:layout_toRightOf="@id/buttonSix"
         />
@@ -189,8 +189,8 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="x"
-        android:textSize="15sp"
+        android:text="*"
+        android:textSize="20sp"
         android:layout_below="@id/buttonSubtract"
         android:layout_toRightOf="@id/buttonThree"
         />
@@ -283,6 +283,15 @@
         android:textSize="20sp"
         android:layout_below="@id/buttonCos"
         android:layout_toRightOf="@id/buttonMod"
+        />
+    <Button
+        android:id="@+id/buttonRandom"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Random"
+        android:textSize="10sp"
+        android:layout_below="@id/buttonTan"
         />
 
 </RelativeLayout>

@@ -246,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
                     fact *=i;
                 }
                 ayeProcess.setText(String.valueOf(fact));
+                fact = 1.0;
             }
         });
         buttonEqual.setOnClickListener(new View.OnClickListener() {
@@ -275,10 +276,11 @@ public class MainActivity extends AppCompatActivity {
                     if(numberTwo != 0){
                         result = numberOne / numberTwo;
                     }else {
-                        ayeProcess.setText("Infinite");
+                        ayeProcess.setText("Can not divide by zero");
                     }
                 }
                 ayeProcess.setText(String.valueOf(result));
+                numberTwo = 0.0;
 
             }
         });

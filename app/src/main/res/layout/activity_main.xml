@@ -233,5 +233,24 @@
         android:layout_below="@id/buttonEqual"
         android:layout_toRightOf="@id/buttonRoot"
         />
+    <Button
+        android:id="@+id/buttonCos"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cos"
+        android:textSize="20sp"
+        android:layout_below="@id/buttonDivision"
+        android:layout_toRightOf="@id/buttonSin"
+        />
+    <Button
+        android:id="@+id/buttonTan"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tan"
+        android:textSize="20sp"
+        android:layout_below="@id/buttonClear"
+        />
 
 </RelativeLayout>

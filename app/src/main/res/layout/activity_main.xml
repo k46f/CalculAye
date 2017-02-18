@@ -11,6 +11,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.k46f.calculaye.MainActivity">
 
+
+
     <ImageView
         android:layout_width="250px"
         android:layout_height="175px"
@@ -35,7 +37,7 @@
 
     <Button
         android:id="@+id/buttonSeven"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="7"
@@ -45,7 +47,7 @@
 
     <Button
         android:id="@+id/buttonFour"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonSeven"
@@ -55,7 +57,7 @@
 
     <Button
         android:id="@+id/buttonOne"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonFour"
@@ -65,7 +67,7 @@
 
     <Button
         android:id="@+id/buttonDot"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="."
@@ -75,7 +77,7 @@
 
     <Button
         android:id="@+id/buttonEight"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="8"
@@ -85,7 +87,7 @@
 
     <Button
         android:id="@+id/buttonFive"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5"
@@ -96,7 +98,7 @@
 
     <Button
         android:id="@+id/buttonTwo"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2"
@@ -107,7 +109,7 @@
 
     <Button
         android:id="@+id/buttonZero"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
@@ -118,7 +120,7 @@
 
     <Button
         android:id="@+id/buttonNine"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="9"
@@ -129,7 +131,7 @@
 
     <Button
         android:id="@+id/buttonSix"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="6"
@@ -140,7 +142,7 @@
 
     <Button
         android:id="@+id/buttonThree"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3"
@@ -151,7 +153,7 @@
 
     <Button
         android:id="@+id/buttonEqual"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="="
@@ -162,7 +164,7 @@
 
     <Button
         android:id="@+id/buttonAdd"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
@@ -173,32 +175,32 @@
 
     <Button
         android:id="@+id/buttonSubtract"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_below="@id/buttonAdd"
         android:layout_toRightOf="@id/buttonSix"
         />
 
     <Button
         android:id="@+id/buttonMultiply"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="x"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:layout_below="@id/buttonSubtract"
         android:layout_toRightOf="@id/buttonThree"
         />
 
     <Button
         android:id="@+id/buttonDivision"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="/"
+        android:text="÷"
         android:textSize="20sp"
         android:layout_below="@id/buttonMultiply"
         android:layout_toRightOf="@id/buttonEqual"
@@ -206,7 +208,7 @@
 
     <Button
         android:id="@+id/buttonClear"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="C"
@@ -215,7 +217,7 @@
         />
     <Button
         android:id="@+id/buttonRoot"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="√"
@@ -225,7 +227,7 @@
         />
     <Button
         android:id="@+id/buttonSin"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sin"
@@ -235,7 +237,7 @@
         />
     <Button
         android:id="@+id/buttonCos"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cos"
@@ -245,7 +247,7 @@
         />
     <Button
         android:id="@+id/buttonTan"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tan"
@@ -254,7 +256,7 @@
         />
     <Button
         android:id="@+id/buttonFact"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="x!"
@@ -264,7 +266,7 @@
         />
     <Button
         android:id="@+id/buttonMod"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mod"

@@ -17,13 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonSeven, buttonFour, buttonOne, buttonDot, buttonEight, buttonFive,
             buttonTwo, buttonZero, buttonNine, buttonSix, buttonThree, buttonEqual,
-            buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear;
+            buttonAdd, buttonSubtract, buttonMultiply, buttonDivision, buttonClear, buttonRoot;
 
     private String operator;
 
     private EditText ayeProcess, ayeBack;
 
     private Double result;
+    private Double resultSquare;
 
     private Double numberOne = 0.0;
     private Double numberTwo = 0.0;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMultiply = (Button) findViewById(R.id.buttonMultiply);
         buttonDivision = (Button) findViewById(R.id.buttonDivision);
         buttonClear = (Button) findViewById(R.id.buttonClear);
+        buttonRoot = (Button) findViewById(R.id.buttonRoot);
         ayeProcess = (EditText) findViewById(R.id.ayeProcess);
 
         buttonClear.setOnClickListener(new View.OnClickListener() {
@@ -179,6 +181,14 @@ public class MainActivity extends AppCompatActivity {
                 numberOne = Double.parseDouble(ayeBack.getText().toString());
                 ayeProcess.setHint(ayeBack.getText());
                 ayeProcess.setText("");
+            }
+        });
+        buttonRoot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultSquare = Double.parseDouble(ayeProcess.getText().toString());
+                resultSquare = Math.sqrt(resultSquare);
+                ayeProcess.setText(String.valueOf(resultSquare));
             }
         });
         buttonEqual.setOnClickListener(new View.OnClickListener() {

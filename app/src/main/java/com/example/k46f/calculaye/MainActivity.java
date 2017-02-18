@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         buttonClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ayeSr.start();
                 ayeProcess.setText("");
                 ayeProcess.setHint("0");
             }
@@ -203,6 +204,7 @@ public class MainActivity extends AppCompatActivity {
         buttonRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.sqrt(result);
                 ayeProcess.setText(String.valueOf(result));
@@ -211,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.sin(result);
                 ayeProcess.setText(String.valueOf(result));
@@ -219,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCos.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.cos(result);
                 ayeProcess.setText(String.valueOf(result));
@@ -227,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
         buttonTan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 result = Math.tan(result);
                 ayeProcess.setText(String.valueOf(result));
@@ -235,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
         buttonFact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ayeSr.start();
                 result = Double.parseDouble(ayeProcess.getText().toString());
                 for (Double i =1.0; i <= result; i++) {
                     fact *=i;

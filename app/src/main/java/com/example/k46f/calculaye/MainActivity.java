@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
             buttonSin, buttonCos, buttonTan, buttonFact, buttonMod, buttonPercentage, buttonRandom,
             buttonLog, buttonPow;
 
-    private String operator;
+    private String operator, resultD;
     private EditText ayeProcess, ayeBack;
     private Double result;
     private Double numberOne = 0.0;
@@ -412,7 +412,11 @@ public class MainActivity extends AppCompatActivity {
                         ayeProcess.setText("Can not divide by zero");
                     }
                 }
-                ayeProcess.setText(String.valueOf(result));
+                if (result % 1 == 0) {
+                    ayeProcess.setText(String.format("%.0f", result));
+                }else{
+                    ayeProcess.setText(String.valueOf(result));
+                }
                 numberOne = 0.0;
                 }
 

@@ -441,24 +441,29 @@ public class MainActivity extends AppCompatActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (ayeProcess.getHint().equals(" ")) {
                     Log.i(LOG_TAG, "Number is empty");
                 }else{
                 ayeSr.start();
                 ayeBack = (EditText)findViewById(R.id.ayeProcess);
                 numberTwo = Double.parseDouble(ayeBack.getText().toString());
+
                 if(operator.equals("+")) {
                     ayeProcess.setText("");
                     result = numberOne + numberTwo;
                 }
+
                 if(operator.equals("-")) {
                     ayeProcess.setText("");
                     result = numberOne - numberTwo;
                 }
+
                 if(operator.equals("x")) {
                     ayeProcess.setText("");
                     result = numberOne * numberTwo;
                 }
+
                 if (operator.equals("mod")) {
                     ayeProcess.setText("");
                     result = numberOne % numberTwo;
@@ -483,6 +488,7 @@ public class MainActivity extends AppCompatActivity {
                     factComOne = 1.0;
                     factComTwo = 1.0;
                 }
+
                 if (operator.equals("npr")){
                     ayeProcess.setText("");
                     for (Double i = numberOne; comNn <= numberTwo; i--) {
@@ -493,6 +499,7 @@ public class MainActivity extends AppCompatActivity {
                     factComOne = 1.0;
                     comNn = 1.0;
                 }
+
                 if(operator.equals("/")) {
                     ayeProcess.setText("");
                     if(numberTwo != 0){
@@ -501,6 +508,7 @@ public class MainActivity extends AppCompatActivity {
                         ayeProcess.setText("Can not divide by zero");
                     }
                 }
+
                 if (result % 1 == 0) {
                     ayeProcess.setText(String.format("%.0f", result));
                 }else{
